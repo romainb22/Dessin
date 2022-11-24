@@ -1,6 +1,8 @@
 package dessin;
 
-public class Rectangle extends Quadrilatere {
+import java.awt.*;
+
+public class Rectangle extends Quadrilatere implements Zoomable, Dessinable {
 
 	private Rectangle(Point[] points) {
 		super(points);
@@ -25,5 +27,11 @@ public class Rectangle extends Quadrilatere {
 	public double surface() {
 		System.out.println("Calcul de la surface d'un Rectangle");
 		return this.hauteur() * this.largeur();
+	}
+	public void zoom(int zoomX) {
+		this.points[1].setX(this.points[1].getX() * zoomX);
+		this.points[2].setX(this.points[2].getX() * zoomX);
+		this.points[2].setY(this.points[2].getY() * zoomX);
+		this.points[3].setY(this.points[3].getY() * zoomX);
 	}
 }

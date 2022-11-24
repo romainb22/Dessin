@@ -1,4 +1,5 @@
-import dessin.EnsemblePolygoneAlea;
+import dessin.DessinFormes;
+import dessin.EnsembleFormeAlea;
 import dessin.Point;
 import dessin.Polygone;
 import dessin.Quadrilatere;
@@ -37,6 +38,7 @@ public class Test {
 		System.out.println(p1.signeAngle(p2, p3));
 
 		Polygone pol = new Polygone(4);
+		System.out.println("test si p1 est dans pol");
 		pol.estDedans(p1);
 		Point[] points = new Point[3];
 		for (int i=0; i<3; i++) {
@@ -58,8 +60,16 @@ public class Test {
 		System.out.println(r.plusGrand(t));
 		/* On appelle bien les surface() de triangle et de rectangle */
 
-		EnsemblePolygoneAlea ens = new EnsemblePolygoneAlea(54);
-		ens.affiche();
+		// EnsembleFormeAlea ens = new EnsembleFormeAlea(54);
+		// ens.affiche();
+
+		Point[] tabPol1 = {p1, p2, p3};
+		Polygone pol1 = new Polygone(3, tabPol1);
+		Point[] tabPol2 = {p3, p1, p2};
+		Polygone pol2 = new Polygone(3, tabPol2);
+		System.out.println(pol1.equals(pol2));
+
+		DessinFormes.creer();
 
 		/*
 		* dessinSRC.jar -> jar source

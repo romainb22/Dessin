@@ -55,12 +55,20 @@ public class Point {
 		return "< " + this.getX() + "> <" + this.getY() + " >";
 	}
 
+	public double produitScalaire(Point b, Point c) {
+		return 0.5 * (Math.pow(this.distance(b), 2) + Math.pow(this.distance(c), 2) - Math.pow(b.distance(c), 2));
+	}
+
 	public double angle(Point b, Point c) {
+		return Math.acos(produitScalaire(b ,c) / (this.distance(b) * this.distance(c)));
+	}
+
+	public double determinant(Point b, Point c) {
 		return (b.getX() - this.getX()) * (c.getY() - this.getY()) - (c.getX() - this.getX()) * (b.getY() - this.getY());
 	}
 
 	public int signeAngle(Point b, Point c) {
-		double angle = this.angle(b, c);
+		double angle = this.determinant(b, c);
 		System.out.println(angle);
 		if ( angle < 0) {
 			return SAM;
