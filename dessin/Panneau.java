@@ -49,4 +49,8 @@ public class Panneau extends JPanel {
 		Rectangle r = new Rectangle(p1, p2);
 		r.seDessiner(g); */
 	}
+
+	public Panneau getPanneau() {
+		return (Panneau) this.panneau;
+	}
 }

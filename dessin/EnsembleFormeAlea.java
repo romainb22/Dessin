@@ -15,7 +15,7 @@ public class EnsembleFormeAlea extends EnsembleForme {
 			int i = new Random().nextInt(21) + 2;
 			switch (i) {
 				case 2:
-					this.ajouterForme(new Cercle());
+					//this.ajouterForme(new Cercle());
 					break;
 				case 3:
 					Point[] p = new Point[3];
